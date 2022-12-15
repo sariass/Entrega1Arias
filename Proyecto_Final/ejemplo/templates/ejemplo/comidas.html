@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base_comida.html' %}
+{%block titulo%}    
+Lista de comidas
+{% endblock %}
+{% block contenido %}
+    <ul>
+    {% for comida in lista_comidas %}
+        
+            <li> Nombre: {{comida.nombre}}, Procedencia: {{comida.procedencia}}, Ingredientes: {{comida.ingredientes}} ID: {{comida.id}} 
+                <a href="/mi-comida/actualizar/{{ comida.id }}">Actualizar</a>
+                <a href="/mi-comida/borrar/{{ comida.id }}">Borrar</a>
+            </li>
+        
+    {% endfor %}
+    </ul>
+
+{% endblock %}

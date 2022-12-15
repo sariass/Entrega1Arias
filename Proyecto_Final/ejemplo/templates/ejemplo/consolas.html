@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base_consola.html' %}
+{%block titulo%}    
+Lista de consolas
+{% endblock %}
+{% block contenido %}
+    <ul>
+    {% for consola in lista_consolas %}
+        
+            <li> Nombre: {{consola.nombre}}, Tipo: {{comida.tipo}}, Color: {{consola.color}} ID: {{comida.id}} 
+                <a href="/mi-consola/actualizar/{{ consola.id }}">Actualizar</a>
+                <a href="/mi-consola/borrar/{{ consola.id }}">Borrar</a>
+            </li>
+        
+    {% endfor %}
+    </ul>
+
+{% endblock %}

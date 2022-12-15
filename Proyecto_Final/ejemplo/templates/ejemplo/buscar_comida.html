@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base_comida.html' %}
+{% block titulo%}
+Buscar comidas
+{% endblock %}
+{% block contenido %}
+<form action="/mi-comida/buscar" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  {% for comida in lista_comidas %}
+  <ul>
+      <li> Nombre: {{comida.nombre}}, Procedencia: {{comida.procedencia}}, Ingredientes: {{comida.ingredientes}}</li>
+  </ul>
+  {% endfor %}
+{% endblock %}

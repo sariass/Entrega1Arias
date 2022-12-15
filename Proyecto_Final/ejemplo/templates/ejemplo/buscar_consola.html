@@ -1,0 +1,17 @@
+{% extends 'ejemplo/base_consola.html' %}
+{% block titulo%}
+Buscar consolas
+{% endblock %}
+{% block contenido %}
+<form action="/mi-consola/buscar" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit">
+  </form>
+
+  {% for consola in lista_consolas %}
+  <ul>
+      <li> Nombre: {{consola.nombre}}, Tipo: {{consola.tipo}}, Color: {{consola.color}}</li>
+  </ul>
+  {% endfor %}
+{% endblock %}
