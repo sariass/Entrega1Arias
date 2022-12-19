@@ -4,7 +4,7 @@ class Familiar(models.Model):
     
     nombre = models.CharField(max_length=100)
     direccion = models.CharField(max_length=200)
-    f_nacimiento = models.IntegerField()
+    f_nacimiento = models.DateField()
     numero_pasaporte = models.IntegerField()
     edad = models.IntegerField()
    
